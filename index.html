@@ -260,7 +260,7 @@ textarea.form-input{min-height:120px}
 
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
-.footer-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;gap:1rem}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-brand{font-family:var(--font-mono);font-size:0.85rem;color:var(--text3)}
 .footer-brand span{color:var(--accent)}
 .footer-links{display:flex;gap:1.5rem}
@@ -291,7 +291,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  /* Allow hero content to take natural height on small screens (avoid awkward 100vh+fixed nav spacing). */
   #hero{min-height:auto;padding-top:64px;padding-bottom:2.5rem}
   .hero-content{grid-template-columns:1fr;gap:2.25rem;text-align:center;padding:0 1.25rem}
   .hero-portrait-area{justify-content:center}
@@ -299,10 +298,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
   .hero-actions{justify-content:center}
   .hero-stats{justify-content:center;flex-wrap:wrap;gap:1.25rem;margin-top:2.25rem;padding-top:1.5rem}
   .hero-stat-item{min-width:110px}
-
-  /* Canvas should not affect layout or interactions. */
   #hero-canvas{pointer-events:none}
-
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .contact-grid{grid-template-columns:1fr;gap:2rem}
   .portrait-frame{width:250px;height:315px}
@@ -320,8 +316,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
   body{overflow-x:hidden}
   .section{padding:5rem 0}
   .section-inner{padding:0 1rem}
-
-  /* Hero tweaks for very small screens */
   #hero{padding-top:64px}
   .hero-content{padding:0 0.9rem;gap:1.75rem}
   .hero-badge{margin-bottom:1.1rem}
@@ -330,12 +324,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary{width:100%;justify-content:center}
   .hero-stats{gap:1rem}
-
   .portrait-frame{width:210px;height:280px}
   .portrait-card{padding:1.2rem}
   .portrait-avatar{width:86px;height:86px}
   .floating-tag{display:none}
-
   .modal-tabs{flex-wrap:wrap}
   .modal-tab{font-size:0.7rem;padding:0.5rem}
   .recruiter-grid{grid-template-columns:1fr}
@@ -344,36 +336,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
   .timeline::before{left:0}
   p,h1,h2,h3,h4,li,span{overflow-wrap:anywhere;word-break:break-word}
 }
-
-/* Extra-small fix: keep hero name letters/lines stable below 428px */
 @media(max-width:428px){
-  .hero-name{
-    display:block;
-    line-height:1.05;
-    letter-spacing:-0.015em;
-    -webkit-text-size-adjust:100%;
-    text-rendering:optimizeLegibility;
-  }
+  .hero-name{display:block;line-height:1.05;letter-spacing:-0.015em;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
   .hero-name br{display:block}
-  .hero-name span{
-    display:block;
-    line-height:1.05;
-    letter-spacing:-0.015em;
-  }
+  .hero-name span{display:block;line-height:1.05;letter-spacing:-0.015em}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.001ms!important;transition-duration:0.001ms!important}
 }
 img,svg{max-width:100%;height:auto}
 img{display:block}
-.profile-img{
-    width:100%;
-    height:100%;
-    max-width:100%;
-    object-fit:contain;
-    object-position:center;
-    background-color:#000000;
-}
+.profile-img{width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center;background-color:#000000;}
 </style>
 </head>
 <body>
@@ -410,49 +383,25 @@ img{display:block}
         Available for Opportunities
       </div>
       <h1 class="hero-name fade-in stagger-1">Mohammad<br/><span>Anas Shaikh</span></h1>
-      <p class="hero-title fade-in stagger-2"><strong>AI Engineer & Data Scientist</strong><br/>
-        Building intelligent systems that scale</p>
-      <p class="hero-desc fade-in stagger-3">
-        Specialising in machine learning pipelines, RAG architectures, NLP solutions and end-to-end data science — from model ideation through production deployment.
-      </p>
+      <p class="hero-title fade-in stagger-2"><strong>AI Engineer & Data Scientist</strong><br/>Building intelligent systems that scale</p>
+      <p class="hero-desc fade-in stagger-3">Specialising in machine learning pipelines, RAG architectures, NLP solutions and end-to-end data science — from model ideation through production deployment.</p>
       <div class="hero-actions fade-in stagger-4">
-        <button class="btn-primary" onclick="scrollToSection('projects')">
-          <span>Explore Work</span> <span>→</span>
-        </button>
-        <button class="btn-secondary" onclick="scrollToSection('contact')">
-          Get in Touch
-        </button>
+        <button class="btn-primary" onclick="scrollToSection('projects')"><span>Explore Work</span> <span>→</span></button>
+        <button class="btn-secondary" onclick="scrollToSection('contact')">Get in Touch</button>
       </div>
       <div class="hero-stats fade-in stagger-4">
-        <div class="hero-stat-item">
-          <div class="stat-num">5<span>+</span></div>
-          <div class="stat-label">Projects</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="stat-num">2<span>x</span></div>
-          <div class="stat-label">Internships</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="stat-num">8.7<span>0</span></div>
-          <div class="stat-label">CGPA</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="stat-num">10<span>+</span></div>
-          <div class="stat-label">Technologies</div>
-        </div>
+        <div class="hero-stat-item"><div class="stat-num">5<span>+</span></div><div class="stat-label">Projects</div></div>
+        <div class="hero-stat-item"><div class="stat-num">2<span>x</span></div><div class="stat-label">Internships</div></div>
+        <div class="hero-stat-item"><div class="stat-num">8.7<span>0</span></div><div class="stat-label">CGPA</div></div>
+        <div class="hero-stat-item"><div class="stat-num">10<span>+</span></div><div class="stat-label">Technologies</div></div>
       </div>
     </div>
     <div class="hero-portrait-area fade-in stagger-2">
       <div class="portrait-frame">
         <div class="portrait-glow"></div>
         <div class="portrait-card">
-          <div class="portrait-placeholder" >
-    <img src="imgs/anas_img.png" alt="Mohammad Anas Shaikh" class="profile-img">
-</div>
-          <div class="portrait-info">
-            <div class="portrait-name">Mohammad Anas Shaikh</div>
-            <div class="portrait-role">AI Engineer · Mumbai, India</div>
-          </div>
+          <div class="portrait-placeholder"><img src="imgs/anas_img.png" alt="Mohammad Anas Shaikh" class="profile-img"></div>
+          <div class="portrait-info"><div class="portrait-name">Mohammad Anas Shaikh</div><div class="portrait-role">AI Engineer · Mumbai, India</div></div>
         </div>
         <div class="floating-tag ft1"><div class="ft-dot teal" style="background:var(--accent2)"></div>Python · TensorFlow</div>
         <div class="floating-tag ft2"><div class="ft-dot purple" style="background:var(--accent)"></div>RAG Pipelines</div>
@@ -461,288 +410,29 @@ img{display:block}
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text fade-in">
-        <div class="section-eyebrow">About</div>
-        <h2 class="section-title">Building AI systems with<br/>production intent</h2>
-        <p>I am an AI Engineer and Data Scientist currently pursuing my Master's in Data Science at the Institute of Science (HBSU), with a strong academic foundation — completing my B.Sc. in Data Science from Mumbai University with a CGPA of 8.70.</p>
-        <p>My work spans the full AI/ML lifecycle: from <strong>data ingestion and feature engineering</strong> to model development, evaluation, and deployment. I have hands-on experience building <strong>NLP pipelines, intelligent recommendation systems, RAG-based assistants</strong>, and agentic data analysis tools.</p>
-        <p>I believe every AI product should be measurable, explainable, and built to last. Whether it is a real-time congestion predictor or an enterprise knowledge assistant, I approach each system with the same rigour: clean architecture, defensible decisions, and a focus on real-world impact.</p>
-        <div class="about-links">
-          <a class="about-link" href="mailto:foranasuse97@gmail.com">✉️ Email</a>
-          <a class="about-link" href="https://github.com/" target="_blank" rel="noopener">⌥ GitHub</a>
-          <a class="about-link" href="https://linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a>
-        </div>
-      </div>
-      <div class="fade-in stagger-2">
-        <div class="about-info-grid" style="margin-bottom:1.5rem">
-          <div class="info-card">
-            <div class="info-card-label">Location</div>
-            <div class="info-card-value">Mumbai, MH 400097</div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-label">Status</div>
-            <div class="info-card-value">Open to Roles</div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-label">Focus</div>
-            <div class="info-card-value">AI / ML / Data</div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-label">Stack Depth</div>
-            <div class="info-card-value">Full-Stack AI</div>
-          </div>
-        </div>
-        <div style="margin-bottom:0.5rem;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);font-family:var(--font-mono)">Education</div>
-        <div class="edu-item">
-          <div class="edu-degree">Master's in Data Science</div>
-          <div class="edu-school">Institute of Science, HBSU</div>
-          <div class="edu-meta">Pursuing</div>
-          <div class="edu-grade">SGPA: 7.7</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">B.Sc. in Data Science</div>
-          <div class="edu-school">DTSS College of Commerce, Mumbai University</div>
-          <div class="edu-meta">Jul 2022 – Apr 2025</div>
-          <div class="edu-grade">CGPA: 8.70</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ABOUT (unchanged) -->
+<section id="about" class="section"><div class="section-inner"><div class="about-grid"><div class="about-text fade-in"><div class="section-eyebrow">About</div><h2 class="section-title">Building AI systems with<br/>production intent</h2><p>I am an AI Engineer and Data Scientist currently pursuing my Master's in Data Science at the Institute of Science (HBSU), with a strong academic foundation — completing my B.Sc. in Data Science from Mumbai University with a CGPA of 8.70.</p><p>My work spans the full AI/ML lifecycle: from <strong>data ingestion and feature engineering</strong> to model development, evaluation, and deployment. I have hands-on experience building <strong>NLP pipelines, intelligent recommendation systems, RAG-based assistants</strong>, and agentic data analysis tools.</p><p>I believe every AI product should be measurable, explainable, and built to last. Whether it is a real-time congestion predictor or an enterprise knowledge assistant, I approach each system with the same rigour: clean architecture, defensible decisions, and a focus on real-world impact.</p><div class="about-links"><a class="about-link" href="mailto:foranasuse97@gmail.com">✉️ Email</a><a class="about-link" href="https://github.com/" target="_blank" rel="noopener">⌥ GitHub</a><a class="about-link" href="https://linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a></div></div><div class="fade-in stagger-2"><div class="about-info-grid" style="margin-bottom:1.5rem"><div class="info-card"><div class="info-card-label">Location</div><div class="info-card-value">Mumbai, MH 400097</div></div><div class="info-card"><div class="info-card-label">Status</div><div class="info-card-value">Open to Roles</div></div><div class="info-card"><div class="info-card-label">Focus</div><div class="info-card-value">AI / ML / Data</div></div><div class="info-card"><div class="info-card-label">Stack Depth</div><div class="info-card-value">Full-Stack AI</div></div></div><div style="margin-bottom:0.5rem;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);font-family:var(--font-mono)">Education</div><div class="edu-item"><div class="edu-degree">Master's in Data Science</div><div class="edu-school">Institute of Science, HBSU</div><div class="edu-meta">Pursuing</div><div class="edu-grade">SGPA: 7.7</div></div><div class="edu-item"><div class="edu-degree">B.Sc. in Data Science</div><div class="edu-school">DTSS College of Commerce, Mumbai University</div><div class="edu-meta">Jul 2022 – Apr 2025</div><div class="edu-grade">CGPA: 8.70</div></div></div></div></div></section>
 <div class="section-divider"></div>
 
-<!-- SKILLS -->
-<section id="skills" class="section">
-  <div class="section-inner">
-    <div class="section-header fade-in">
-      <div class="section-eyebrow">Technical Stack</div>
-      <h2 class="section-title">Skills &amp; Technologies</h2>
-      <p class="section-subtitle">A production-oriented skill set spanning the full AI/ML and data engineering lifecycle.</p>
-    </div>
-    <div class="skills-cluster-grid">
-      <div class="skill-cluster fade-in stagger-1">
-        <div class="cluster-icon">🤖</div>
-        <div class="cluster-name">AI &amp; Machine Learning</div>
-        <div class="skill-tags">
-          <span class="skill-tag purple">TensorFlow</span>
-          <span class="skill-tag purple">Scikit-learn</span>
-          <span class="skill-tag purple">NLTK</span>
-          <span class="skill-tag purple">NLP</span>
-          <span class="skill-tag purple">ML Modelling</span>
-          <span class="skill-tag purple">RAG</span>
-          <span class="skill-tag purple">Recommendation Systems</span>
-        </div>
-      </div>
-      <div class="skill-cluster fade-in stagger-2">
-        <div class="cluster-icon">🐍</div>
-        <div class="cluster-name">Languages &amp; Frameworks</div>
-        <div class="skill-tags">
-          <span class="skill-tag teal">Python</span>
-          <span class="skill-tag teal">R</span>
-          <span class="skill-tag teal">MySQL</span>
-          <span class="skill-tag teal">MongoDB</span>
-          <span class="skill-tag teal">Flask</span>
-          <span class="skill-tag teal">HTML / Bootstrap</span>
-        </div>
-      </div>
-      <div class="skill-cluster fade-in stagger-3">
-        <div class="cluster-icon">📊</div>
-        <div class="cluster-name">Data Engineering &amp; Analytics</div>
-        <div class="skill-tags">
-          <span class="skill-tag yellow">Pandas</span>
-          <span class="skill-tag yellow">NumPy</span>
-          <span class="skill-tag yellow">Matplotlib</span>
-          <span class="skill-tag yellow">Seaborn</span>
-          <span class="skill-tag yellow">Power BI</span>
-          <span class="skill-tag yellow">Tableau</span>
-          <span class="skill-tag yellow">Excel</span>
-          <span class="skill-tag yellow">SQL</span>
-          <span class="skill-tag yellow">Chart.js</span>
-        </div>
-      </div>
-      <div class="skill-cluster fade-in stagger-4">
-        <div class="cluster-icon">⚙️</div>
-        <div class="cluster-name">Domain Expertise</div>
-        <div class="skill-tags">
-          <span class="skill-tag red">Data Analysis</span>
-          <span class="skill-tag red">Feature Engineering</span>
-          <span class="skill-tag red">Supply Chain</span>
-          <span class="skill-tag red">Web Development</span>
-          <span class="skill-tag red">Data Visualisation</span>
-          <span class="skill-tag red">AI Deployment</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- SKILLS (unchanged) -->
+<section id="skills" class="section"><div class="section-inner"><div class="section-header fade-in"><div class="section-eyebrow">Technical Stack</div><h2 class="section-title">Skills &amp; Technologies</h2><p class="section-subtitle">A production-oriented skill set spanning the full AI/ML and data engineering lifecycle.</p></div><div class="skills-cluster-grid"><div class="skill-cluster fade-in stagger-1"><div class="cluster-icon">🤖</div><div class="cluster-name">AI &amp; Machine Learning</div><div class="skill-tags"><span class="skill-tag purple">TensorFlow</span><span class="skill-tag purple">Scikit-learn</span><span class="skill-tag purple">NLTK</span><span class="skill-tag purple">NLP</span><span class="skill-tag purple">ML Modelling</span><span class="skill-tag purple">RAG</span><span class="skill-tag purple">Recommendation Systems</span></div></div><div class="skill-cluster fade-in stagger-2"><div class="cluster-icon">🐍</div><div class="cluster-name">Languages &amp; Frameworks</div><div class="skill-tags"><span class="skill-tag teal">Python</span><span class="skill-tag teal">R</span><span class="skill-tag teal">MySQL</span><span class="skill-tag teal">MongoDB</span><span class="skill-tag teal">Flask</span><span class="skill-tag teal">HTML / Bootstrap</span></div></div><div class="skill-cluster fade-in stagger-3"><div class="cluster-icon">📊</div><div class="cluster-name">Data Engineering &amp; Analytics</div><div class="skill-tags"><span class="skill-tag yellow">Pandas</span><span class="skill-tag yellow">NumPy</span><span class="skill-tag yellow">Matplotlib</span><span class="skill-tag yellow">Seaborn</span><span class="skill-tag yellow">Power BI</span><span class="skill-tag yellow">Tableau</span><span class="skill-tag yellow">Excel</span><span class="skill-tag yellow">SQL</span><span class="skill-tag yellow">Chart.js</span></div></div><div class="skill-cluster fade-in stagger-4"><div class="cluster-icon">⚙️</div><div class="cluster-name">Domain Expertise</div><div class="skill-tags"><span class="skill-tag red">Data Analysis</span><span class="skill-tag red">Feature Engineering</span><span class="skill-tag red">Supply Chain</span><span class="skill-tag red">Web Development</span><span class="skill-tag red">Data Visualisation</span><span class="skill-tag red">AI Deployment</span></div></div></div></div></section>
 <div class="section-divider"></div>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="section" style="background:var(--surface)">
-  <div class="section-inner">
-    <div class="section-header fade-in">
-      <div class="section-eyebrow">Journey</div>
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-subtitle">Real-world internship experience building AI/ML systems with measurable outcomes.</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item fade-in">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-period">June 2025</div>
-          <div class="tl-role">Data Visualisation Intern</div>
-          <div class="tl-company">Forage × TATA Group</div>
-          <div class="tl-desc">Completed a structured data visualisation internship focused on business scenario framing, selecting appropriate visual types, creating impactful dashboards, and communicating data-driven insights to stakeholders. Certified by Forage CEO Brunskill, demonstrating practical ability to empower business decisions through data.</div>
-          <div class="tl-tags">
-            <span class="tl-tag">Data Visualisation</span>
-            <span class="tl-tag">Dashboard Design</span>
-            <span class="tl-tag">Business Intelligence</span>
-            <span class="tl-tag">Insight Communication</span>
-          </div>
-        </div>
-      </div>
-      <div class="tl-item fade-in stagger-2">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-period">StaxTech · 1 Month</div>
-          <div class="tl-role">AI / Machine Learning Intern</div>
-          <div class="tl-company">StaxTech</div>
-          <div class="tl-desc">Built an intelligent Internship Recommendation Engine that matches candidate profiles with relevant opportunities using ML algorithms. Designed and implemented a Recommendation Bot with real-time NLP-based interaction. Gained hands-on experience in data preprocessing, model training, and deploying user-centric AI solutions end-to-end.</div>
-          <div class="tl-tags">
-            <span class="tl-tag">Recommendation Systems</span>
-            <span class="tl-tag">NLP</span>
-            <span class="tl-tag">ML Modelling</span>
-            <span class="tl-tag">Resume Parsing</span>
-            <span class="tl-tag">Data Preprocessing</span>
-          </div>
-        </div>
-      </div>
-      <div class="tl-item fade-in stagger-3">
-        <div class="tl-dot" style="background:var(--accent2)"></div>
-        <div class="tl-card">
-          <div class="tl-period">2022 – Present · Academic</div>
-          <div class="tl-role">Master's in Data Science</div>
-          <div class="tl-company">Institute of Science, HBSU</div>
-          <div class="tl-desc">Pursuing advanced studies in data science with a focus on machine learning, statistical modelling, and AI system design. Building on a strong undergraduate foundation (CGPA 8.70) with applied research across NLP, recommendation systems, and agentic AI tools.</div>
-          <div class="tl-tags">
-            <span class="tl-tag">Research</span>
-            <span class="tl-tag">Advanced ML</span>
-            <span class="tl-tag">Statistical Modelling</span>
-            <span class="tl-tag">Applied AI</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- EXPERIENCE (unchanged) -->
+<section id="experience" class="section" style="background:var(--surface)"><div class="section-inner"><div class="section-header fade-in"><div class="section-eyebrow">Journey</div><h2 class="section-title">Professional Experience</h2><p class="section-subtitle">Real-world internship experience building AI/ML systems with measurable outcomes.</p></div><div class="timeline"><div class="tl-item fade-in"><div class="tl-dot"></div><div class="tl-card"><div class="tl-period">June 2025</div><div class="tl-role">Data Visualisation Intern</div><div class="tl-company">Forage × TATA Group</div><div class="tl-desc">Completed a structured data visualisation internship focused on business scenario framing, selecting appropriate visual types, creating impactful dashboards, and communicating data-driven insights to stakeholders. Certified by Forage CEO Brunskill, demonstrating practical ability to empower business decisions through data.</div><div class="tl-tags"><span class="tl-tag">Data Visualisation</span><span class="tl-tag">Dashboard Design</span><span class="tl-tag">Business Intelligence</span><span class="tl-tag">Insight Communication</span></div></div></div><div class="tl-item fade-in stagger-2"><div class="tl-dot"></div><div class="tl-card"><div class="tl-period">StaxTech · 1 Month</div><div class="tl-role">AI / Machine Learning Intern</div><div class="tl-company">StaxTech</div><div class="tl-desc">Built an intelligent Internship Recommendation Engine that matches candidate profiles with relevant opportunities using ML algorithms. Designed and implemented a Recommendation Bot with real-time NLP-based interaction. Gained hands-on experience in data preprocessing, model training, and deploying user-centric AI solutions end-to-end.</div><div class="tl-tags"><span class="tl-tag">Recommendation Systems</span><span class="tl-tag">NLP</span><span class="tl-tag">ML Modelling</span><span class="tl-tag">Resume Parsing</span><span class="tl-tag">Data Preprocessing</span></div></div></div><div class="tl-item fade-in stagger-3"><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-card"><div class="tl-period">2022 – Present · Academic</div><div class="tl-role">Master's in Data Science</div><div class="tl-company">Institute of Science, HBSU</div><div class="tl-desc">Pursuing advanced studies in data science with a focus on machine learning, statistical modelling, and AI system design. Building on a strong undergraduate foundation (CGPA 8.70) with applied research across NLP, recommendation systems, and agentic AI tools.</div><div class="tl-tags"><span class="tl-tag">Research</span><span class="tl-tag">Advanced ML</span><span class="tl-tag">Statistical Modelling</span><span class="tl-tag">Applied AI</span></div></div></div></div></div></section>
 <div class="section-divider"></div>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="section-inner">
-    <div class="section-header fade-in">
-      <div class="section-eyebrow">Work</div>
-      <h2 class="section-title">Project Portfolio</h2>
-      <p class="section-subtitle">Production-oriented AI systems built with a focus on architecture quality, scalability, and measurable impact.</p>
-    </div>
-    <div class="projects-controls fade-in">
-      <div class="search-wrapper">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="projectSearch" placeholder="Search projects, technologies…" oninput="filterProjects()" autocomplete="off"/>
-      </div>
-      <div class="filter-chips" id="filterChips">
-        <button class="filter-chip active" onclick="setFilter('all',this)">All</button>
-        <button class="filter-chip" onclick="setFilter('ai',this)">AI / LLM</button>
-        <button class="filter-chip" onclick="setFilter('ml',this)">ML</button>
-        <button class="filter-chip" onclick="setFilter('nlp',this)">NLP</button>
-        <button class="filter-chip" onclick="setFilter('data',this)">Data</button>
-        <button class="filter-chip" onclick="setFilter('web',this)">Web</button>
-      </div>
-    </div>
-    <div class="projects-grid fade-in" id="projectsGrid"></div>
-    <div class="no-results" id="noResults" style="display:none">
-      <div class="no-results-title">No projects match that search</div>
-      <p>Try a different keyword or clear the filter.</p>
-    </div>
-  </div>
-</section>
-
+<!-- PROJECTS (unchanged) -->
+<section id="projects" class="section"><div class="section-inner"><div class="section-header fade-in"><div class="section-eyebrow">Work</div><h2 class="section-title">Project Portfolio</h2><p class="section-subtitle">Production-oriented AI systems built with a focus on architecture quality, scalability, and measurable impact.</p></div><div class="projects-controls fade-in"><div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" id="projectSearch" placeholder="Search projects, technologies…" oninput="filterProjects()" autocomplete="off"/></div><div class="filter-chips" id="filterChips"><button class="filter-chip active" onclick="setFilter('all',this)">All</button><button class="filter-chip" onclick="setFilter('ai',this)">AI / LLM</button><button class="filter-chip" onclick="setFilter('ml',this)">ML</button><button class="filter-chip" onclick="setFilter('nlp',this)">NLP</button><button class="filter-chip" onclick="setFilter('data',this)">Data</button><button class="filter-chip" onclick="setFilter('web',this)">Web</button></div></div><div class="projects-grid fade-in" id="projectsGrid"></div><div class="no-results" id="noResults" style="display:none"><div class="no-results-title">No projects match that search</div><p>Try a different keyword or clear the filter.</p></div></div></section>
 <div class="section-divider"></div>
 
-<!-- RECRUITER SECTION -->
-<section id="recruiter" class="section">
-  <div class="section-inner">
-    <div class="section-header fade-in">
-      <div class="section-eyebrow">For Recruiters</div>
-      <h2 class="section-title">Why Hire Anas</h2>
-      <p class="section-subtitle">Key capabilities at a glance — everything a technical hiring decision needs to know.</p>
-    </div>
-    <div class="recruiter-grid fade-in">
-      <div class="rec-kpi"><div class="rec-kpi-val">5<span>+</span></div><div class="rec-kpi-label">Production Projects</div></div>
-      <div class="rec-kpi"><div class="rec-kpi-val">2<span>x</span></div><div class="rec-kpi-label">Internships</div></div>
-      <div class="rec-kpi"><div class="rec-kpi-val">10<span>+</span></div><div class="rec-kpi-label">Technologies</div></div>
-      <div class="rec-kpi"><div class="rec-kpi-val">8<span>.7</span></div><div class="rec-kpi-label">Academic CGPA</div></div>
-    </div>
-    <div class="rec-strengths fade-in">
-      <div class="strength-item">
-        <div class="strength-icon si-purple">🧠</div>
-        <div>
-          <div class="strength-title">AI &amp; ML Engineering</div>
-          <div class="strength-desc">End-to-end model lifecycle from data prep through TensorFlow/Scikit pipelines to deployed inference.</div>
-        </div>
-      </div>
-      <div class="strength-item">
-        <div class="strength-icon si-teal">🔗</div>
-        <div>
-          <div class="strength-title">RAG &amp; NLP Systems</div>
-          <div class="strength-desc">Retrieval-Augmented Generation pipelines, NLTK-based NLP, and conversational AI design.</div>
-        </div>
-      </div>
-      <div class="strength-item">
-        <div class="strength-icon si-yellow">📈</div>
-        <div>
-          <div class="strength-title">Data Engineering</div>
-          <div class="strength-desc">SQL/NoSQL pipelines, feature engineering, and analytics dashboards in Power BI &amp; Tableau.</div>
-        </div>
-      </div>
-      <div class="strength-item">
-        <div class="strength-icon si-red">🚀</div>
-        <div>
-          <div class="strength-title">Full-Stack Deployment</div>
-          <div class="strength-desc">Flask API backends, web-embedded AI tools, and cloud-ready application architecture.</div>
-        </div>
-      </div>
-      <div class="strength-item">
-        <div class="strength-icon si-purple">📊</div>
-        <div>
-          <div class="strength-title">Business Intelligence</div>
-          <div class="strength-desc">TATA / Forage certified — translating data into executive-ready visual narratives.</div>
-        </div>
-      </div>
-      <div class="strength-item">
-        <div class="strength-icon si-teal">🎯</div>
-        <div>
-          <div class="strength-title">Fast Learner, Strong Academic</div>
-          <div class="strength-desc">8.70 CGPA, M.Sc. in progress, and a consistent record of delivering applied AI solutions.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- RECRUITER SECTION (unchanged) -->
+<section id="recruiter" class="section"><div class="section-inner"><div class="section-header fade-in"><div class="section-eyebrow">For Recruiters</div><h2 class="section-title">Why Hire Anas</h2><p class="section-subtitle">Key capabilities at a glance — everything a technical hiring decision needs to know.</p></div><div class="recruiter-grid fade-in"><div class="rec-kpi"><div class="rec-kpi-val">5<span>+</span></div><div class="rec-kpi-label">Production Projects</div></div><div class="rec-kpi"><div class="rec-kpi-val">2<span>x</span></div><div class="rec-kpi-label">Internships</div></div><div class="rec-kpi"><div class="rec-kpi-val">10<span>+</span></div><div class="rec-kpi-label">Technologies</div></div><div class="rec-kpi"><div class="rec-kpi-val">8<span>.7</span></div><div class="rec-kpi-label">Academic CGPA</div></div></div><div class="rec-strengths fade-in"><div class="strength-item"><div class="strength-icon si-purple">🧠</div><div><div class="strength-title">AI &amp; ML Engineering</div><div class="strength-desc">End-to-end model lifecycle from data prep through TensorFlow/Scikit pipelines to deployed inference.</div></div></div><div class="strength-item"><div class="strength-icon si-teal">🔗</div><div><div class="strength-title">RAG &amp; NLP Systems</div><div class="strength-desc">Retrieval-Augmented Generation pipelines, NLTK-based NLP, and conversational AI design.</div></div></div><div class="strength-item"><div class="strength-icon si-yellow">📈</div><div><div class="strength-title">Data Engineering</div><div class="strength-desc">SQL/NoSQL pipelines, feature engineering, and analytics dashboards in Power BI &amp; Tableau.</div></div></div><div class="strength-item"><div class="strength-icon si-red">🚀</div><div><div class="strength-title">Full-Stack Deployment</div><div class="strength-desc">Flask API backends, web-embedded AI tools, and cloud-ready application architecture.</div></div></div><div class="strength-item"><div class="strength-icon si-purple">📊</div><div><div class="strength-title">Business Intelligence</div><div class="strength-desc">TATA / Forage certified — translating data into executive-ready visual narratives.</div></div></div><div class="strength-item"><div class="strength-icon si-teal">🎯</div><div><div class="strength-title">Fast Learner, Strong Academic</div><div class="strength-desc">8.70 CGPA, M.Sc. in progress, and a consistent record of delivering applied AI solutions.</div></div></div></div></div></section>
 <div class="section-divider"></div>
 
-<!-- CONTACT -->
+<!-- CONTACT with Formspree integration -->
 <section id="contact" class="section" style="background:var(--surface)">
   <div class="section-inner">
     <div class="section-header fade-in">
@@ -752,426 +442,157 @@ img{display:block}
     </div>
     <div class="contact-grid">
       <div class="contact-info fade-in">
-        <a class="contact-item" href="mailto:foranasuse97@gmail.com">
-          <div class="contact-item-icon">✉️</div>
-          <div>
-            <div class="contact-item-label">Email</div>
-            <div class="contact-item-value">foranasuse97@gmail.com</div>
-          </div>
-        </a>
-        <a class="contact-item" href="tel:+917304788909">
-          <div class="contact-item-icon">📱</div>
-          <div>
-            <div class="contact-item-label">Phone</div>
-            <div class="contact-item-value">+91 7304 788 909</div>
-          </div>
-        </a>
-        <a class="contact-item" href="https://github.com/" target="_blank" rel="noopener">
-          <div class="contact-item-icon">⌥</div>
-          <div>
-            <div class="contact-item-label">GitHub</div>
-            <div class="contact-item-value">github.com/anas-shaikh</div>
-          </div>
-        </a>
-        <a class="contact-item" href="https://linkedin.com/" target="_blank" rel="noopener">
-          <div class="contact-item-icon">💼</div>
-          <div>
-            <div class="contact-item-label">LinkedIn</div>
-            <div class="contact-item-value">linkedin.com/in/anas-shaikh</div>
-          </div>
-        </a>
-        <div class="contact-item" style="background:rgba(108,99,255,0.06);border-color:rgba(108,99,255,0.2)">
-          <div class="contact-item-icon">📍</div>
-          <div>
-            <div class="contact-item-label">Location</div>
-            <div class="contact-item-value">Mumbai, Maharashtra 400097</div>
-          </div>
-        </div>
+        <a class="contact-item" href="mailto:foranasuse97@gmail.com"><div class="contact-item-icon">✉️</div><div><div class="contact-item-label">Email</div><div class="contact-item-value">foranasuse97@gmail.com</div></div></a>
+        <a class="contact-item" href="tel:+917304788909"><div class="contact-item-icon">📱</div><div><div class="contact-item-label">Phone</div><div class="contact-item-value">+91 7304 788 909</div></div></a>
+        <a class="contact-item" href="https://github.com/" target="_blank" rel="noopener"><div class="contact-item-icon">⌥</div><div><div class="contact-item-label">GitHub</div><div class="contact-item-value">github.com/anas-shaikh</div></div></a>
+        <a class="contact-item" href="https://linkedin.com/" target="_blank" rel="noopener"><div class="contact-item-icon">💼</div><div><div class="contact-item-label">LinkedIn</div><div class="contact-item-value">linkedin.com/in/anas-shaikh</div></div></a>
+        <div class="contact-item" style="background:rgba(108,99,255,0.06);border-color:rgba(108,99,255,0.2)"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Location</div><div class="contact-item-value">Mumbai, Maharashtra 400097</div></div></div>
       </div>
       <div class="fade-in stagger-2">
-        <div class="contact-form">
+        <!-- Formspree form: all recruiter messages sent directly to your email -->
+        <form action="https://formspree.io/f/xkoapqyd" method="POST" class="contact-form" id="recruiterForm">
           <div class="form-group">
-            <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="Jane Smith" id="cf-name"/>
+            <label class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-input" placeholder="Jane Smith" required/>
           </div>
           <div class="form-group">
             <label class="form-label">Email Address</label>
-            <input type="email" class="form-input" placeholder="jane@company.com" id="cf-email"/>
+            <input type="email" name="email" class="form-input" placeholder="jane@company.com" required/>
           </div>
           <div class="form-group">
-            <label class="form-label">Subject</label>
-            <input type="text" class="form-input" placeholder="Collaboration / Job Opportunity" id="cf-subject"/>
+            <label class="form-label">Company / Organization</label>
+            <input type="text" name="company" class="form-input" placeholder="Tech Corp Inc."/>
           </div>
           <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-input" placeholder="Tell me about the role or project…" id="cf-message"></textarea>
+            <label class="form-label">Role / Subject</label>
+            <input type="text" name="subject" class="form-input" placeholder="Senior AI Engineer / ML Opportunity" required/>
           </div>
-          <button class="form-submit" onclick="submitContactForm()">Send Message →</button>
-        </div>
+          <div class="form-group">
+            <label class="form-label">Message / Opportunity Details</label>
+            <textarea name="message" class="form-input" placeholder="Tell me about the role, project, or collaboration opportunity..." required></textarea>
+          </div>
+          <!-- Hidden fields to improve email context -->
+          <input type="hidden" name="_subject" value="🚀 New Portfolio Message from Anas Shaikh's Website"/>
+          <input type="hidden" name="_replyto" value="email"/>
+          <input type="hidden" name="_gotcha" style="display:none !important"/>
+          <button type="submit" class="form-submit" id="formSubmitBtn">Send Message →</button>
+          <div id="formStatus" style="margin-top:1rem; font-size:0.8rem; text-align:center; display:none;"></div>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">anas<span>.dev</span> · Mohammad Anas Shaikh</div>
-    <div class="footer-links">
-      <a onclick="scrollToSection('about')">About</a>
-      <a onclick="scrollToSection('projects')">Projects</a>
-      <a onclick="scrollToSection('contact')">Contact</a>
-    </div>
-    <div class="footer-copy">© 2025 Mohammad Anas Shaikh</div>
-  </div>
-</footer>
+<footer><div class="footer-inner"><div class="footer-brand">anas<span>.dev</span> · Mohammad Anas Shaikh</div><div class="footer-links"><a onclick="scrollToSection('about')">About</a><a onclick="scrollToSection('projects')">Projects</a><a onclick="scrollToSection('contact')">Contact</a></div><div class="footer-copy">© 2025 Mohammad Anas Shaikh</div></div></footer>
 
 <!-- PROJECT MODAL -->
-<div class="modal-overlay" id="projectModal" onclick="closeModalOnOverlay(event)">
-  <div class="modal" id="modalContent">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-hero" id="modalHero"></div>
-    <div class="modal-body">
-      <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--text);margin-bottom:0.4rem" id="modalTitle"></h2>
-      <p style="font-size:0.85rem;color:var(--text2);margin-bottom:1.5rem;line-height:1.6" id="modalSubtitle"></p>
-      <div class="modal-tabs" id="modalTabs"></div>
-      <div id="modalTabContents"></div>
-    </div>
-  </div>
-</div>
+<div class="modal-overlay" id="projectModal" onclick="closeModalOnOverlay(event)"><div class="modal" id="modalContent"><button class="modal-close" onclick="closeModal()">✕</button><div class="modal-hero" id="modalHero"></div><div class="modal-body"><h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--text);margin-bottom:0.4rem" id="modalTitle"></h2><p style="font-size:0.85rem;color:var(--text2);margin-bottom:1.5rem;line-height:1.6" id="modalSubtitle"></p><div class="modal-tabs" id="modalTabs"></div><div id="modalTabContents"></div></div></div></div>
 
 <script>
-// ─────────────────────────────────────────
-// THREE.JS HERO CANVAS
-// ─────────────────────────────────────────
+// THREE.JS HERO CANVAS (fully intact)
 (function initHeroCanvas(){
   const canvas = document.getElementById('hero-canvas');
+  if(!canvas) return;
   const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
   camera.position.set(0, 0, 28);
-
-  function resize(){
-    const w = canvas.clientWidth, h = canvas.clientHeight;
-    renderer.setSize(w, h, false);
-    camera.aspect = w/h;
-    camera.updateProjectionMatrix();
-  }
+  function resize(){ const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix(); }
   resize();
   new ResizeObserver(resize).observe(canvas);
-
-  // Particles
   const N = 280;
   const geo = new THREE.BufferGeometry();
   const pos = new Float32Array(N*3);
   const vel = [];
-  for(let i=0;i<N;i++){
-    pos[i*3]   = (Math.random()-0.5)*60;
-    pos[i*3+1] = (Math.random()-0.5)*40;
-    pos[i*3+2] = (Math.random()-0.5)*30;
-    vel.push([(Math.random()-0.5)*0.018,(Math.random()-0.5)*0.012,0]);
-  }
+  for(let i=0;i<N;i++){ pos[i*3]=(Math.random()-0.5)*60; pos[i*3+1]=(Math.random()-0.5)*40; pos[i*3+2]=(Math.random()-0.5)*30; vel.push([(Math.random()-0.5)*0.018,(Math.random()-0.5)*0.012,0]); }
   geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
   const mat = new THREE.PointsMaterial({color:0x6c63ff, size:0.18, transparent:true, opacity:0.6});
   const particles = new THREE.Points(geo,mat);
   scene.add(particles);
-
-  // Network edges
   const lineMat = new THREE.LineBasicMaterial({color:0x6c63ff,transparent:true,opacity:0.12});
   const edgeGeo = new THREE.BufferGeometry();
   const edgeVerts = [];
   const maxDist = 14;
-  for(let i=0;i<N;i++){
-    for(let j=i+1;j<N;j++){
-      const dx=pos[i*3]-pos[j*3], dy=pos[i*3+1]-pos[j*3+1], dz=pos[i*3+2]-pos[j*3+2];
-      if(Math.sqrt(dx*dx+dy*dy+dz*dz)<maxDist){
-        edgeVerts.push(pos[i*3],pos[i*3+1],pos[i*3+2],pos[j*3],pos[j*3+1],pos[j*3+2]);
-      }
-    }
-  }
+  for(let i=0;i<N;i++){ for(let j=i+1;j<N;j++){ const dx=pos[i*3]-pos[j*3], dy=pos[i*3+1]-pos[j*3+1], dz=pos[i*3+2]-pos[j*3+2]; if(Math.sqrt(dx*dx+dy*dy+dz*dz)<maxDist){ edgeVerts.push(pos[i*3],pos[i*3+1],pos[i*3+2],pos[j*3],pos[j*3+1],pos[j*3+2]); } } }
   edgeGeo.setAttribute('position',new THREE.Float32BufferAttribute(edgeVerts,3));
   const lines = new THREE.LineSegments(edgeGeo,lineMat);
   scene.add(lines);
-
-  // Ambient
   scene.add(new THREE.AmbientLight(0xffffff,0.2));
-
   let mouse = {x:0,y:0};
   window.addEventListener('mousemove',e=>{mouse.x=(e.clientX/window.innerWidth-0.5)*2;mouse.y=-(e.clientY/window.innerHeight-0.5)*2});
-
   let t=0;
-  function animate(){
-    requestAnimationFrame(animate);
-    t+=0.006;
-    const p=geo.attributes.position.array;
-    for(let i=0;i<N;i++){
-      p[i*3]+=vel[i][0]; p[i*3+1]+=vel[i][1];
-      if(Math.abs(p[i*3])>30){vel[i][0]*=-1;}
-      if(Math.abs(p[i*3+1])>20){vel[i][1]*=-1;}
-    }
-    geo.attributes.position.needsUpdate=true;
-    particles.rotation.y=t*0.04+mouse.x*0.08;
-    particles.rotation.x=t*0.02+mouse.y*0.05;
-    lines.rotation.y=t*0.04+mouse.x*0.08;
-    lines.rotation.x=t*0.02+mouse.y*0.05;
-    renderer.render(scene,camera);
-  }
+  function animate(){ requestAnimationFrame(animate); t+=0.006; const p=geo.attributes.position.array; for(let i=0;i<N;i++){ p[i*3]+=vel[i][0]; p[i*3+1]+=vel[i][1]; if(Math.abs(p[i*3])>30){vel[i][0]*=-1;} if(Math.abs(p[i*3+1])>20){vel[i][1]*=-1;} } geo.attributes.position.needsUpdate=true; particles.rotation.y=t*0.04+mouse.x*0.08; particles.rotation.x=t*0.02+mouse.y*0.05; lines.rotation.y=t*0.04+mouse.x*0.08; lines.rotation.x=t*0.02+mouse.y*0.05; renderer.render(scene,camera); }
   animate();
 })();
 
-// ─────────────────────────────────────────
-// NAV SCROLL
-// ─────────────────────────────────────────
-window.addEventListener('scroll',()=>{
-  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);
-});
-function scrollToSection(id){
-  const el=document.getElementById(id);
-  if(el){window.scrollTo({top:el.offsetTop-64,behavior:'smooth'});}
-}
-function toggleMobileMenu(){
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
+// NAVIGATION & SCROLL
+window.addEventListener('scroll',()=>{ document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60); });
+function scrollToSection(id){ const el=document.getElementById(id); if(el){window.scrollTo({top:el.offsetTop-64,behavior:'smooth'});} }
+function toggleMobileMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
 
-// ─────────────────────────────────────────
-// INTERSECTION OBSERVER (fade-in)
-// ─────────────────────────────────────────
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-},{threshold:0.12});
+// INTERSECTION OBSERVER
+const io=new IntersectionObserver(entries=>{ entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
 
-// ─────────────────────────────────────────
 // PROJECT DATA
-// ─────────────────────────────────────────
 const PROJECTS=[
-  {
-    id:'intellisights',
-    title:'IntelliSights & Calorie Tracker',
-    emoji:'🤖',
-    bg:'linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)',
-    badge:'NLP',
-    badgeClass:'badge-nlp',
-    category:['nlp','web','ai'],
-    tech:['Python','Flask','HTML','Bootstrap','Chart.js','NLTK'],
-    short:'NLP-powered chatbot assistant integrated with a calorie tracking system featuring searchable food databases and dynamic progress visualisation.',
-    problem:'Users needed an intelligent website assistant that could handle natural language queries while simultaneously providing health-tracking functionality for daily calorie management.',
-    solution:'Built a unified platform combining an NLP chatbot (for instant query responses) with a calorie tracker backed by a searchable food database and Chart.js visualisations for daily intake trends.',
-    architecture:['User Input','NLP Engine','Intent Router','ChatBot Response / Calorie Logger','Chart.js Dashboard'],
-    outcomes:['Real-time NLP query resolution','Searchable food database for rapid logging','Dynamic calorie progress charts','Responsive Bootstrap design for all devices'],
-    deployment:'Flask backend hosted on a cloud server; frontend served as static assets with Bootstrap CDN.',
-    impact:'Improved user engagement through intelligent conversational UI and actionable health analytics in a single interface.',
-  },
-  {
-    id:'rec-engine',
-    title:'Internship Recommendation Engine',
-    emoji:'🎯',
-    bg:'linear-gradient(135deg,#0a0a1a,#1a0a2e,#2a0a3e)',
-    badge:'ML',
-    badgeClass:'badge-ml',
-    category:['ml','ai'],
-    tech:['Python','Scikit-learn','NLP','Resume Parsing','Pandas','Feature Engineering'],
-    short:'End-to-end ML recommendation engine that parses resumes and matches candidate profiles to relevant internship opportunities using real-time market trend analysis.',
-    problem:'Candidates waste significant time applying for mismatched internships; existing systems ignore resume context, skill gaps, and real-time hiring demand.',
-    solution:'Designed a personalised recommendation pipeline: resume upload → automatic parsing & skill extraction → ML matching against live opportunity database → structured, ranked output with actionable career suggestions.',
-    architecture:['Resume Upload','Parsing & Feature Extraction','ML Similarity Model','Market Trend Enrichment','Ranked Recommendation Output'],
-    outcomes:['Automated resume parsing with skill extraction','ML-based profile-to-opportunity matching','Real-time market trend alignment','End-to-end workflow from credential input to ranked results'],
-    deployment:'Flask API backend; demo deployed on cloud with static frontend.',
-    impact:'Reduced candidate time-to-match by surfacing the most relevant opportunities based on actual profile data and live hiring patterns.',
-  },
-  {
-    id:'agent-copilot',
-    title:'Agent Copilot for Data Analysis',
-    emoji:'📊',
-    bg:'linear-gradient(135deg,#0a1a0a,#0a2a1a,#0a3a2a)',
-    badge:'AI',
-    badgeClass:'badge-ai',
-    category:['ai','data','ml'],
-    tech:['Python','LLM','Pandas','Scikit-learn','Natural Language Interface','Agentic AI'],
-    short:'AI-powered agentic copilot enabling non-technical users to perform end-to-end data analysis via file upload and natural language text prompts.',
-    problem:'Data analysis requires specialised skills that most business users lack. Manual workflows are slow, error-prone, and require dedicated data analysts for every query.',
-    solution:'Built an agentic AI system where users upload CSV/Excel files and type natural language queries. The agent interprets intent, runs analysis pipelines (filtering, forecasting, trend detection), and returns structured insights.',
-    architecture:['File Upload','Schema Detection','NL Query Parser','Analysis Agent','Prediction Engine','Insight Renderer'],
-    outcomes:['Zero-code data analysis via text prompts','Predictive modelling with user-selected features','Automated filtering, grouping, and trend detection','Significant reduction in manual analysis effort'],
-    deployment:'Deployable via Streamlit or Gradio; Python backend with Pandas/Scikit pipeline.',
-    impact:'Democratises data analysis for non-technical stakeholders, reducing analyst turnaround time and empowering self-service insights.',
-  },
-  {
-    id:'trafficpulse',
-    title:'TrafficPulse AI',
-    emoji:'🚦',
-    bg:'linear-gradient(135deg,#1a0a0a,#2a0a0a,#3a1a0a)',
-    badge:'AI',
-    badgeClass:'badge-ai',
-    category:['ai','ml','data'],
-    tech:['Python','TensorFlow','GPS Analytics','Computer Vision','FastAPI','PostgreSQL','Real-Time Streaming'],
-    short:'Real-time traffic congestion forecasting platform combining GPS analytics, camera-based insights, and predictive ML models to enable smart rerouting recommendations.',
-    problem:'Urban congestion costs billions annually. Existing navigation tools react to current conditions rather than predicting them, leaving commuters without adequate advance warning.',
-    solution:'Built a multi-source traffic intelligence platform ingesting GPS streams and camera feeds, applying ML forecasting models to predict congestion 15–30 minutes ahead, and generating smart rerouting suggestions via an API layer.',
-    architecture:['GPS + Camera Feeds','Real-Time Ingestion Layer','Feature Engineering','LSTM Forecasting Model','Congestion Classifier','Rerouting API','Dashboard'],
-    outcomes:['15–30 min ahead congestion prediction','Multi-source data fusion (GPS + camera)','Smart rerouting recommendation engine','Real-time monitoring dashboard'],
-    deployment:'FastAPI backend on cloud infrastructure; PostgreSQL for event storage; model served via REST API.',
-    impact:'Enables city planners and logistics operators to proactively manage traffic, reducing commute times and fuel consumption.',
-  },
-  {
-    id:'enterprise-rag',
-    title:'Enterprise AI Knowledge Assistant',
-    emoji:'💼',
-    bg:'linear-gradient(135deg,#0a0a1a,#0a1a3a,#0a2a4a)',
-    badge:'AI',
-    badgeClass:'badge-ai',
-    category:['ai','nlp'],
-    tech:['Python','RAG','Vector DB','LLM','Flask','Analytics Dashboard','Knowledge Pipelines'],
-    short:'RAG-powered enterprise AI assistant for company knowledge retrieval — covering marketing content, product information, customer support, and internal documentation with an analytics dashboard.',
-    problem:'Enterprise teams lose hours daily searching internal documentation, inconsistently answering customer queries, and lacking visibility into knowledge gaps.',
-    solution:'Designed a full RAG pipeline: document ingestion → chunking → vector embedding → retrieval-augmented generation for accurate, grounded answers. Paired with an analytics dashboard tracking query volume, resolution rate, and content gaps.',
-    architecture:['Document Ingestion','Chunking & Embedding','Vector Store','Retrieval Engine','LLM Generation Layer','Response API','Analytics Dashboard'],
-    outcomes:['Instant knowledge base retrieval via natural language','Grounded, hallucination-reduced responses via RAG','Customer support automation pipeline','Real-time analytics on usage and coverage'],
-    deployment:'Flask API + Vector DB on cloud; frontend dashboard for admins; CI/CD-ready containerised deployment.',
-    impact:'Cuts internal search time, improves customer response consistency, and gives management visibility into knowledge health across the organisation.',
-  },
+  { id:'intellisights', title:'IntelliSights & Calorie Tracker', emoji:'🤖', bg:'linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)', badge:'NLP', badgeClass:'badge-nlp', category:['nlp','web','ai'], tech:['Python','Flask','HTML','Bootstrap','Chart.js','NLTK'], short:'NLP-powered chatbot assistant integrated with a calorie tracking system featuring searchable food databases and dynamic progress visualisation.', problem:'Users needed an intelligent website assistant that could handle natural language queries while simultaneously providing health-tracking functionality for daily calorie management.', solution:'Built a unified platform combining an NLP chatbot (for instant query responses) with a calorie tracker backed by a searchable food database and Chart.js visualisations for daily intake trends.', architecture:['User Input','NLP Engine','Intent Router','ChatBot Response / Calorie Logger','Chart.js Dashboard'], outcomes:['Real-time NLP query resolution','Searchable food database for rapid logging','Dynamic calorie progress charts','Responsive Bootstrap design for all devices'], deployment:'Flask backend hosted on a cloud server; frontend served as static assets with Bootstrap CDN.', impact:'Improved user engagement through intelligent conversational UI and actionable health analytics in a single interface.' },
+  { id:'rec-engine', title:'Internship Recommendation Engine', emoji:'🎯', bg:'linear-gradient(135deg,#0a0a1a,#1a0a2e,#2a0a3e)', badge:'ML', badgeClass:'badge-ml', category:['ml','ai'], tech:['Python','Scikit-learn','NLP','Resume Parsing','Pandas','Feature Engineering'], short:'End-to-end ML recommendation engine that parses resumes and matches candidate profiles to relevant internship opportunities using real-time market trend analysis.', problem:'Candidates waste significant time applying for mismatched internships; existing systems ignore resume context, skill gaps, and real-time hiring demand.', solution:'Designed a personalised recommendation pipeline: resume upload → automatic parsing & skill extraction → ML matching against live opportunity database → structured, ranked output with actionable career suggestions.', architecture:['Resume Upload','Parsing & Feature Extraction','ML Similarity Model','Market Trend Enrichment','Ranked Recommendation Output'], outcomes:['Automated resume parsing with skill extraction','ML-based profile-to-opportunity matching','Real-time market trend alignment','End-to-end workflow from credential input to ranked results'], deployment:'Flask API backend; demo deployed on cloud with static frontend.', impact:'Reduced candidate time-to-match by surfacing the most relevant opportunities based on actual profile data and live hiring patterns.' },
+  { id:'agent-copilot', title:'Agent Copilot for Data Analysis', emoji:'📊', bg:'linear-gradient(135deg,#0a1a0a,#0a2a1a,#0a3a2a)', badge:'AI', badgeClass:'badge-ai', category:['ai','data','ml'], tech:['Python','LLM','Pandas','Scikit-learn','Natural Language Interface','Agentic AI'], short:'AI-powered agentic copilot enabling non-technical users to perform end-to-end data analysis via file upload and natural language text prompts.', problem:'Data analysis requires specialised skills that most business users lack. Manual workflows are slow, error-prone, and require dedicated data analysts for every query.', solution:'Built an agentic AI system where users upload CSV/Excel files and type natural language queries. The agent interprets intent, runs analysis pipelines (filtering, forecasting, trend detection), and returns structured insights.', architecture:['File Upload','Schema Detection','NL Query Parser','Analysis Agent','Prediction Engine','Insight Renderer'], outcomes:['Zero-code data analysis via text prompts','Predictive modelling with user-selected features','Automated filtering, grouping, and trend detection','Significant reduction in manual analysis effort'], deployment:'Deployable via Streamlit or Gradio; Python backend with Pandas/Scikit pipeline.', impact:'Democratises data analysis for non-technical stakeholders, reducing analyst turnaround time and empowering self-service insights.' },
+  { id:'trafficpulse', title:'TrafficPulse AI', emoji:'🚦', bg:'linear-gradient(135deg,#1a0a0a,#2a0a0a,#3a1a0a)', badge:'AI', badgeClass:'badge-ai', category:['ai','ml','data'], tech:['Python','TensorFlow','GPS Analytics','Computer Vision','FastAPI','PostgreSQL','Real-Time Streaming'], short:'Real-time traffic congestion forecasting platform combining GPS analytics, camera-based insights, and predictive ML models to enable smart rerouting recommendations.', problem:'Urban congestion costs billions annually. Existing navigation tools react to current conditions rather than predicting them, leaving commuters without adequate advance warning.', solution:'Built a multi-source traffic intelligence platform ingesting GPS streams and camera feeds, applying ML forecasting models to predict congestion 15–30 minutes ahead, and generating smart rerouting suggestions via an API layer.', architecture:['GPS + Camera Feeds','Real-Time Ingestion Layer','Feature Engineering','LSTM Forecasting Model','Congestion Classifier','Rerouting API','Dashboard'], outcomes:['15–30 min ahead congestion prediction','Multi-source data fusion (GPS + camera)','Smart rerouting recommendation engine','Real-time monitoring dashboard'], deployment:'FastAPI backend on cloud infrastructure; PostgreSQL for event storage; model served via REST API.', impact:'Enables city planners and logistics operators to proactively manage traffic, reducing commute times and fuel consumption.' },
+  { id:'enterprise-rag', title:'Enterprise AI Knowledge Assistant', emoji:'💼', bg:'linear-gradient(135deg,#0a0a1a,#0a1a3a,#0a2a4a)', badge:'AI', badgeClass:'badge-ai', category:['ai','nlp'], tech:['Python','RAG','Vector DB','LLM','Flask','Analytics Dashboard','Knowledge Pipelines'], short:'RAG-powered enterprise AI assistant for company knowledge retrieval — covering marketing content, product information, customer support, and internal documentation with an analytics dashboard.', problem:'Enterprise teams lose hours daily searching internal documentation, inconsistently answering customer queries, and lacking visibility into knowledge gaps.', solution:'Designed a full RAG pipeline: document ingestion → chunking → vector embedding → retrieval-augmented generation for accurate, grounded answers. Paired with an analytics dashboard tracking query volume, resolution rate, and content gaps.', architecture:['Document Ingestion','Chunking & Embedding','Vector Store','Retrieval Engine','LLM Generation Layer','Response API','Analytics Dashboard'], outcomes:['Instant knowledge base retrieval via natural language','Grounded, hallucination-reduced responses via RAG','Customer support automation pipeline','Real-time analytics on usage and coverage'], deployment:'Flask API + Vector DB on cloud; frontend dashboard for admins; CI/CD-ready containerised deployment.', impact:'Cuts internal search time, improves customer response consistency, and gives management visibility into knowledge health across the organisation.' }
 ];
-
-let activeFilter='all';
-let activeSearch='';
-
-function setFilter(f,btn){
-  activeFilter=f;
-  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
-  btn.classList.add('active');
-  renderProjects();
-}
-function filterProjects(){
-  activeSearch=document.getElementById('projectSearch').value.toLowerCase();
-  renderProjects();
-}
-function renderProjects(){
-  const grid=document.getElementById('projectsGrid');
-  const none=document.getElementById('noResults');
-  const filtered=PROJECTS.filter(p=>{
-    const catMatch=activeFilter==='all'||p.category.includes(activeFilter);
-    const q=activeSearch;
-    const textMatch=!q||p.title.toLowerCase().includes(q)||p.short.toLowerCase().includes(q)||p.tech.some(t=>t.toLowerCase().includes(q));
-    return catMatch&&textMatch;
-  });
-  if(filtered.length===0){grid.innerHTML='';none.style.display='block';return;}
-  none.style.display='none';
-  grid.innerHTML=filtered.map(p=>`
-    <div class="project-card" onclick="openModal('${p.id}')">
-      <div class="project-thumb">
-        <div class="project-thumb-inner" style="background:${p.bg}">${p.emoji}</div>
-        <div class="project-badge ${p.badgeClass}">${p.badge}</div>
-      </div>
-      <div class="project-body">
-        <div class="project-title">${p.title}</div>
-        <div class="project-desc">${p.short}</div>
-        <div class="project-tech-stack">${p.tech.map(t=>`<span class="tech-pill">${t}</span>`).join('')}</div>
-        <div class="project-footer">
-          <div class="project-links">
-            <a class="project-link" href="#" onclick="event.stopPropagation()">⌥ GitHub</a>
-            <a class="project-link" href="#" onclick="event.stopPropagation()">↗ Demo</a>
-          </div>
-          <button class="project-open-btn">Case Study →</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
+let activeFilter='all', activeSearch='';
+function setFilter(f,btn){ activeFilter=f; document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active')); btn.classList.add('active'); renderProjects(); }
+function filterProjects(){ activeSearch=document.getElementById('projectSearch').value.toLowerCase(); renderProjects(); }
+function renderProjects(){ const grid=document.getElementById('projectsGrid'); const none=document.getElementById('noResults'); const filtered=PROJECTS.filter(p=>{ const catMatch=activeFilter==='all'||p.category.includes(activeFilter); const q=activeSearch; const textMatch=!q||p.title.toLowerCase().includes(q)||p.short.toLowerCase().includes(q)||p.tech.some(t=>t.toLowerCase().includes(q)); return catMatch&&textMatch; }); if(filtered.length===0){grid.innerHTML='';none.style.display='block';return;} none.style.display='none'; grid.innerHTML=filtered.map(p=>`<div class="project-card" onclick="openModal('${p.id}')"><div class="project-thumb"><div class="project-thumb-inner" style="background:${p.bg}">${p.emoji}</div><div class="project-badge ${p.badgeClass}">${p.badge}</div></div><div class="project-body"><div class="project-title">${p.title}</div><div class="project-desc">${p.short}</div><div class="project-tech-stack">${p.tech.map(t=>`<span class="tech-pill">${t}</span>`).join('')}</div><div class="project-footer"><div class="project-links"><a class="project-link" href="#" onclick="event.stopPropagation()">⌥ GitHub</a><a class="project-link" href="#" onclick="event.stopPropagation()">↗ Demo</a></div><button class="project-open-btn">Case Study →</button></div></div></div>`).join(''); }
 renderProjects();
-
-// ─────────────────────────────────────────
-// PROJECT MODAL
-// ─────────────────────────────────────────
-function openModal(id){
-  const p=PROJECTS.find(x=>x.id===id);
-  if(!p)return;
-  document.getElementById('modalHero').style.background=p.bg;
-  document.getElementById('modalHero').innerHTML=`<span style="font-size:4rem">${p.emoji}</span>`;
-  document.getElementById('modalTitle').textContent=p.title;
-  document.getElementById('modalSubtitle').textContent=p.short;
-
-  const tabs=['Overview','Architecture','Case Study'];
-  document.getElementById('modalTabs').innerHTML=tabs.map((t,i)=>
-    `<button class="modal-tab ${i===0?'active':''}" onclick="switchTab(${i},this)">${t}</button>`
-  ).join('');
-
-  const techPills=p.tech.map(t=>`<span class="tech-pill" style="margin-right:0.4rem;margin-bottom:0.4rem;display:inline-block">${t}</span>`).join('');
-  const archFlow=p.architecture.map((n,i)=>
-    `<span class="arch-node">${n}</span>${i<p.architecture.length-1?'<span class="arch-arrow">→</span>':''}`
-  ).join('');
-  const outcomes=p.outcomes.map(o=>`<li>${o}</li>`).join('');
-
-  document.getElementById('modalTabContents').innerHTML=`
-    <div class="modal-tab-content active" id="mtab-0">
-      <div class="modal-section">
-        <div class="modal-section-title">Technology Stack</div>
-        <div>${techPills}</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Key Outcomes</div>
-        <ul class="modal-list">${outcomes}</ul>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Deployment Strategy</div>
-        <p>${p.deployment}</p>
-      </div>
-    </div>
-    <div class="modal-tab-content" id="mtab-1">
-      <div class="modal-section">
-        <div class="modal-section-title">System Architecture</div>
-        <div class="arch-flow">${archFlow}</div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Business Impact</div>
-        <p>${p.impact}</p>
-      </div>
-    </div>
-    <div class="modal-tab-content" id="mtab-2">
-      <div class="modal-section">
-        <div class="modal-section-title">Problem Statement</div>
-        <p>${p.problem}</p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Solution Approach</div>
-        <p>${p.solution}</p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Business Impact</div>
-        <p>${p.impact}</p>
-      </div>
-    </div>
-  `;
-
-  document.getElementById('projectModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function switchTab(idx,btn){
-  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.modal-tab-content').forEach(c=>c.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('mtab-'+idx).classList.add('active');
-}
-function closeModal(){
-  document.getElementById('projectModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-function closeModalOnOverlay(e){
-  if(e.target===document.getElementById('projectModal'))closeModal();
-}
+function openModal(id){ const p=PROJECTS.find(x=>x.id===id); if(!p)return; document.getElementById('modalHero').style.background=p.bg; document.getElementById('modalHero').innerHTML=`<span style="font-size:4rem">${p.emoji}</span>`; document.getElementById('modalTitle').textContent=p.title; document.getElementById('modalSubtitle').textContent=p.short; const tabs=['Overview','Architecture','Case Study']; document.getElementById('modalTabs').innerHTML=tabs.map((t,i)=>`<button class="modal-tab ${i===0?'active':''}" onclick="switchTab(${i},this)">${t}</button>`).join(''); const techPills=p.tech.map(t=>`<span class="tech-pill" style="margin-right:0.4rem;margin-bottom:0.4rem;display:inline-block">${t}</span>`).join(''); const archFlow=p.architecture.map((n,i)=>`<span class="arch-node">${n}</span>${i<p.architecture.length-1?'<span class="arch-arrow">→</span>':''}`).join(''); const outcomes=p.outcomes.map(o=>`<li>${o}</li>`).join(''); document.getElementById('modalTabContents').innerHTML=`<div class="modal-tab-content active" id="mtab-0"><div class="modal-section"><div class="modal-section-title">Technology Stack</div><div>${techPills}</div></div><div class="modal-section"><div class="modal-section-title">Key Outcomes</div><ul class="modal-list">${outcomes}</ul></div><div class="modal-section"><div class="modal-section-title">Deployment Strategy</div><p>${p.deployment}</p></div></div><div class="modal-tab-content" id="mtab-1"><div class="modal-section"><div class="modal-section-title">System Architecture</div><div class="arch-flow">${archFlow}</div></div><div class="modal-section"><div class="modal-section-title">Business Impact</div><p>${p.impact}</p></div></div><div class="modal-tab-content" id="mtab-2"><div class="modal-section"><div class="modal-section-title">Problem Statement</div><p>${p.problem}</p></div><div class="modal-section"><div class="modal-section-title">Solution Approach</div><p>${p.solution}</p></div><div class="modal-section"><div class="modal-section-title">Business Impact</div><p>${p.impact}</p></div></div>`; document.getElementById('projectModal').classList.add('open'); document.body.style.overflow='hidden'; }
+function switchTab(idx,btn){ document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.modal-tab-content').forEach(c=>c.classList.remove('active')); btn.classList.add('active'); document.getElementById('mtab-'+idx).classList.add('active'); }
+function closeModal(){ document.getElementById('projectModal').classList.remove('open'); document.body.style.overflow=''; }
+function closeModalOnOverlay(e){ if(e.target===document.getElementById('projectModal'))closeModal(); }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-// ─────────────────────────────────────────
-// CONTACT FORM
-// ─────────────────────────────────────────
-function submitContactForm(){
-  const n=document.getElementById('cf-name').value;
-  const e=document.getElementById('cf-email').value;
-  const s=document.getElementById('cf-subject').value;
-  const m=document.getElementById('cf-message').value;
-  if(!n||!e||!m){alert('Please fill in all required fields.');return;}
-  const mailto=`mailto:foranasuse97@gmail.com?subject=${encodeURIComponent(s||'Portfolio Contact')}&body=${encodeURIComponent('From: '+n+'\nEmail: '+e+'\n\n'+m)}`;
-  window.location.href=mailto;
+// FORMPREE AJAX SUBMIT (smooth UX + error handling)
+const contactForm = document.getElementById('recruiterForm');
+const statusDiv = document.getElementById('formStatus');
+if(contactForm){
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = document.getElementById('formSubmitBtn');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    statusDiv.style.display = 'block';
+    statusDiv.style.color = 'var(--accent2)';
+    statusDiv.textContent = 'Sending message...';
+    const formData = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        statusDiv.style.color = '#00d4aa';
+        statusDiv.textContent = '✓ Message sent successfully! I will get back to you soon.';
+        contactForm.reset();
+        setTimeout(() => { statusDiv.style.display = 'none'; }, 5000);
+      } else {
+        const errorData = await response.json();
+        statusDiv.style.color = '#ff6b6b';
+        statusDiv.textContent = errorData.errors ? errorData.errors.map(e=>e.message).join(', ') : '❌ Failed to send. Please email me directly at foranasuse97@gmail.com';
+      }
+    } catch (err) {
+      statusDiv.style.color = '#ff6b6b';
+      statusDiv.textContent = '❌ Network error. Please try again or email me directly.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
 }
 </script>
 </body>
