@@ -291,14 +291,21 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .hero-content{grid-template-columns:1fr;gap:3rem;text-align:center}
+  /* Allow hero content to take natural height on small screens (avoid awkward 100vh+fixed nav spacing). */
+  #hero{min-height:auto;padding-top:64px;padding-bottom:2.5rem}
+  .hero-content{grid-template-columns:1fr;gap:2.25rem;text-align:center;padding:0 1.25rem}
   .hero-portrait-area{justify-content:center}
-  .hero-desc{margin:0 auto 2.5rem}
+  .hero-desc{margin:0 auto 2rem}
   .hero-actions{justify-content:center}
-  .hero-stats{justify-content:center}
+  .hero-stats{justify-content:center;flex-wrap:wrap;gap:1.25rem;margin-top:2.25rem;padding-top:1.5rem}
+  .hero-stat-item{min-width:110px}
+
+  /* Canvas should not affect layout or interactions. */
+  #hero-canvas{pointer-events:none}
+
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .contact-grid{grid-template-columns:1fr;gap:2rem}
-  .portrait-frame{width:260px;height:300px}
+  .portrait-frame{width:250px;height:315px}
   .ft1,.ft2,.ft3{display:none}
 }
 @media(max-width:768px){
@@ -310,17 +317,59 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
   .recruiter-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
+  body{overflow-x:hidden}
   .section{padding:5rem 0}
+  .section-inner{padding:0 1rem}
+
+  /* Hero tweaks for very small screens */
+  #hero{padding-top:64px}
+  .hero-content{padding:0 0.9rem;gap:1.75rem}
+  .hero-badge{margin-bottom:1.1rem}
+  .hero-title{margin-bottom:1.1rem}
+  .hero-actions{gap:0.75rem;justify-content:center}
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary{width:100%;justify-content:center}
+  .hero-stats{gap:1rem}
+
+  .portrait-frame{width:210px;height:280px}
+  .portrait-card{padding:1.2rem}
+  .portrait-avatar{width:86px;height:86px}
+  .floating-tag{display:none}
+
   .modal-tabs{flex-wrap:wrap}
   .modal-tab{font-size:0.7rem;padding:0.5rem}
   .recruiter-grid{grid-template-columns:1fr}
+  .timeline{padding-left:1.25rem}
+  .tl-item{padding-left:1.25rem}
+  .timeline::before{left:0}
+  p,h1,h2,h3,h4,li,span{overflow-wrap:anywhere;word-break:break-word}
+}
+
+/* Extra-small fix: keep hero name letters/lines stable below 428px */
+@media(max-width:428px){
+  .hero-name{
+    display:block;
+    line-height:1.05;
+    letter-spacing:-0.015em;
+    -webkit-text-size-adjust:100%;
+    text-rendering:optimizeLegibility;
+  }
+  .hero-name br{display:block}
+  .hero-name span{
+    display:block;
+    line-height:1.05;
+    letter-spacing:-0.015em;
+  }
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.001ms!important;transition-duration:0.001ms!important}
 }
+img,svg{max-width:100%;height:auto}
+img{display:block}
 .profile-img{
-    width:90%;
-    height:90%;
+    width:100%;
+    height:100%;
+    max-width:100%;
     object-fit:contain;
     object-position:center;
     background-color:#000000;
@@ -398,7 +447,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0}
         <div class="portrait-glow"></div>
         <div class="portrait-card">
           <div class="portrait-placeholder" >
-    <img src="imgs\anas_img.png" alt="Mohammad Anas Shaikh" class="profile-img">
+    <img src="imgs/anas_img.png" alt="Mohammad Anas Shaikh" class="profile-img">
 </div>
           <div class="portrait-info">
             <div class="portrait-name">Mohammad Anas Shaikh</div>
